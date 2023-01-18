@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Estrela from './Estrela';
 
@@ -8,6 +8,11 @@ export default function Estrelas({
   grande = false,
 }) {
   const [quantidade, setQuantidade] = useState(quantidadeAntiga);
+  console.log(quantidadeAntiga);
+
+  const handleQuantidade = i => {
+    setQuantidade(i + 1);
+  };
 
   const RenderEstrela = () => {
     const listaEstrelas = [];
@@ -15,7 +20,7 @@ export default function Estrelas({
       listaEstrelas.push(
         <Estrela
           key={i}
-          onPress={setQuantidade(i + 1)}
+          onPress={handleQuantidade(i)}
           desabilitada={!editavel}
           preenchida={i < quantidade}
           grande={grande}
