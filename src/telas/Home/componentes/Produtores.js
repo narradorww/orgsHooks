@@ -3,7 +3,6 @@ import {Text, StyleSheet, FlatList} from 'react-native';
 import Produtor from './Produtor';
 
 import {carregaProdutores} from '../../../servicos/carregaDados';
-import Topo from './Topo';
 
 export default function Produtores({topo: Topo}) {
   const [titulo, setTitulo] = useState('');
